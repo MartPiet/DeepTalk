@@ -12,6 +12,10 @@
 		7A1D0CEC20129B90005F0B28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CEA20129B90005F0B28 /* Main.storyboard */; };
 		7A1D0CEE20129B90005F0B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CED20129B90005F0B28 /* Assets.xcassets */; };
 		7A1D0CF120129B90005F0B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CEF20129B90005F0B28 /* LaunchScreen.storyboard */; };
+		7A1D0CFA2012A3C4005F0B28 /* DeepTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */; };
+		7A1D0CFC2012A3DF005F0B28 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */; };
+		7A1D0CFE2012A3FA005F0B28 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */; };
+		7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		7A1D0CED20129B90005F0B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A1D0CF020129B90005F0B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A1D0CF220129B90005F0B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepTalkViewController.swift; sourceTree = "<group>"; };
+		7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,7 @@
 		7A1D0CDA20129B8F005F0B28 = {
 			isa = PBXGroup;
 			children = (
+				7A1D0CF82012A307005F0B28 /* ViewController */,
 				7A1D0CE520129B90005F0B28 /* DeepTalk */,
 				7A1D0CE420129B90005F0B28 /* Products */,
 			);
@@ -62,6 +71,17 @@
 				7A1D0CF220129B90005F0B28 /* Info.plist */,
 			);
 			path = DeepTalk;
+			sourceTree = "<group>";
+		};
+		7A1D0CF82012A307005F0B28 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */,
+				7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */,
+				7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */,
+				7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1D0CFC2012A3DF005F0B28 /* SettingsTableViewController.swift in Sources */,
+				7A1D0CFA2012A3C4005F0B28 /* DeepTalkViewController.swift in Sources */,
+				7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */,
 				7A1D0CE920129B90005F0B28 /* ViewController.swift in Sources */,
+				7A1D0CFE2012A3FA005F0B28 /* AboutViewController.swift in Sources */,
 				7A1D0CE720129B90005F0B28 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
