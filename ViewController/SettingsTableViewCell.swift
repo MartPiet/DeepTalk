@@ -12,6 +12,16 @@ class SettingsTableViewCell: UITableViewCell {
     @IBOutlet weak var cellTextLabel: UIView!
     @IBOutlet weak var cellSwitch: UISwitch!
     
+    var dataManager: DataManager!
+    var category: String!
+    var enabled: Bool!
+    
+    func setup(category: String, enabled: Bool, dataManager: DataManager) {
+        self.dataManager = dataManager
+        self.category = category
+        self.enabled = enabled
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +29,7 @@ class SettingsTableViewCell: UITableViewCell {
 
     @IBAction func switchAction(_ sender: Any) {
         
+        cellSwitch.isOn
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

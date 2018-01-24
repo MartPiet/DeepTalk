@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A036721201910320054D2DE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A036720201910320054D2DE /* DataManager.swift */; };
+		7A036723201910440054D2DE /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A036722201910440054D2DE /* Questions.json */; };
+		7A03672620191AD30054D2DE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A03672520191AD30054D2DE /* Collection.swift */; };
+		7A036728201926090054D2DE /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A036727201926090054D2DE /* Categories.json */; };
 		7A1D0CE720129B90005F0B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CE620129B90005F0B28 /* AppDelegate.swift */; };
 		7A1D0CE920129B90005F0B28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CE820129B90005F0B28 /* ViewController.swift */; };
 		7A1D0CEC20129B90005F0B28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CEA20129B90005F0B28 /* Main.storyboard */; };
@@ -18,7 +22,24 @@
 		7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7A1D0D222012D01E005F0B28 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7A036720201910320054D2DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = DeepTalk/DataManager.swift; sourceTree = SOURCE_ROOT; };
+		7A036722201910440054D2DE /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Questions.json; path = Data/Questions.json; sourceTree = SOURCE_ROOT; };
+		7A03672520191AD30054D2DE /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		7A036727201926090054D2DE /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Categories.json; path = Data/Categories.json; sourceTree = SOURCE_ROOT; };
 		7A1D0CE320129B90005F0B28 /* DeepTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1D0CE620129B90005F0B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1D0CE820129B90005F0B28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,9 +64,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A03671F20190ED60054D2DE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7A036722201910440054D2DE /* Questions.json */,
+				7A036727201926090054D2DE /* Categories.json */,
+				7A036720201910320054D2DE /* DataManager.swift */,
+			);
+			name = Data;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		7A03672420191AB70054D2DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A03672520191AD30054D2DE /* Collection.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7A1D0CDA20129B8F005F0B28 = {
 			isa = PBXGroup;
 			children = (
+				7A03672420191AB70054D2DE /* Extensions */,
+				7A03671F20190ED60054D2DE /* Data */,
 				7A1D0CF82012A307005F0B28 /* ViewController */,
 				7A1D0CE520129B90005F0B28 /* DeepTalk */,
 				7A1D0CE420129B90005F0B28 /* Products */,
@@ -77,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */,
-				7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */,
 				7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */,
+				7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */,
 				7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */,
 			);
 			path = ViewController;
@@ -94,6 +136,7 @@
 				7A1D0CDF20129B90005F0B28 /* Sources */,
 				7A1D0CE020129B90005F0B28 /* Frameworks */,
 				7A1D0CE120129B90005F0B28 /* Resources */,
+				7A1D0D222012D01E005F0B28 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,9 +186,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A036723201910440054D2DE /* Questions.json in Resources */,
 				7A1D0CF120129B90005F0B28 /* LaunchScreen.storyboard in Resources */,
 				7A1D0CEE20129B90005F0B28 /* Assets.xcassets in Resources */,
 				7A1D0CEC20129B90005F0B28 /* Main.storyboard in Resources */,
+				7A036728201926090054D2DE /* Categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +204,11 @@
 				7A1D0CFC2012A3DF005F0B28 /* SettingsTableViewController.swift in Sources */,
 				7A1D0CFA2012A3C4005F0B28 /* DeepTalkViewController.swift in Sources */,
 				7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */,
+				7A036721201910320054D2DE /* DataManager.swift in Sources */,
 				7A1D0CE920129B90005F0B28 /* ViewController.swift in Sources */,
 				7A1D0CFE2012A3FA005F0B28 /* AboutViewController.swift in Sources */,
 				7A1D0CE720129B90005F0B28 /* AppDelegate.swift in Sources */,
+				7A03672620191AD30054D2DE /* Collection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

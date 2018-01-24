@@ -9,15 +9,16 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+    var dataManager: DataManager!
+    var categories: [String]!
+    var enabledCategories: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        dataManager = DataManager()
+        categories = dataManager.getCategories(all: true)
+        enabledCategories = dataManager.getCategories(all: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,18 +35,23 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return categories.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as? SettingsTableViewCell else {
+            fatalError("Wrong class for cell identifier \"settingsCell\".")
+        }
 
-        // Configure the cell...
+        let tmpCategory = categories[indexPath.row]
+        let enabled = enabledCategories.contains(tmpCategory)
 
+        cell.setup(category: tmpCategory, enabled: enabled, dataManager: dataManager)
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
