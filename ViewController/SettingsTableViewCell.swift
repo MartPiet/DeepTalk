@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
-    @IBOutlet weak var cellTextLabel: UIView!
+    @IBOutlet weak var cellTextLabel: UILabel!
     @IBOutlet weak var cellSwitch: UISwitch!
     
     var dataManager: DataManager!
@@ -20,6 +20,9 @@ class SettingsTableViewCell: UITableViewCell {
         self.dataManager = dataManager
         self.category = category
         self.enabled = enabled
+        
+        cellTextLabel.text = self.category
+        cellSwitch.isOn = self.enabled
     }
     
     override func awakeFromNib() {
@@ -28,14 +31,6 @@ class SettingsTableViewCell: UITableViewCell {
     }
 
     @IBAction func switchAction(_ sender: Any) {
-        
-        cellSwitch.isOn
+        dataManager.switchCategory(categoryName: category)
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

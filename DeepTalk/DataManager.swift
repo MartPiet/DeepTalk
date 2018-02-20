@@ -8,99 +8,88 @@
 
 import Foundation
 
+// TODO: Schöner machen, debuggen: es lassen sich die Fragen nicht nach Kategorie filtern.
+
 class DataManager {
-    private var questions: [String]?
-    private var allCategories: [String]?
-    private var selectedCategories: [String]?
-    private var lock: Bool!
+    private var questions: [String]!
+    private let categoriesResource = "Categories"
+    private let questionsResource = "Questions"
+    
+    private var selectedCategories: [String]! {
+        didSet {
+            if oldValue == nil || (oldValue != nil && oldValue != selectedCategories) {
+                questions = fetchQuestions(categories: selectedCategories)
+                print(selectedCategories ?? "None")
+            }
+        }
+    }
     
     init() {
-        lock = false
-        _ = fetchCategories(all: false)
-        _ = fetchQuestions(categories: selectedCategories)
+        initSelectedCategories()
+    }
+    
+    // Needed so observer can detect change. (Does not work when method content runs in init())
+    private func initSelectedCategories() {
+        self.selectedCategories = fetchCategories(all: false)
     }
     
     private func fetchQuestions(categories: [String]?) -> [String] {
-        guard let jsonResult = fetchQuestionsJSON() else {
+        guard let jsonResult = fetchJSON(forResource: questionsResource) as? Dictionary<String, [String]> else {
             return [String]()
         }
         
-        var tmpCategories = [String]()
+        let tmpCategories = categories ?? Array(jsonResult.keys)
         
-        if let categories = categories {
-            tmpCategories = categories
-        } else {
-            tmpCategories = Array(jsonResult.keys)
-        }
-       
         var tmpQuestions = [String]()
+        
         for key in tmpCategories {
-            guard let groupedQuestions = jsonResult[key] else {
-                fatalError("Key not fetchable in in dictionary.")
-            }
-            tmpQuestions = tmpQuestions + groupedQuestions
+            if jsonResult[key] != nil { tmpQuestions.append(contentsOf: jsonResult[key]!) }
         }
         
-        tmpQuestions = tmpQuestions.shuffled()
+        questions = tmpQuestions.shuffled()
         
-        questions = tmpQuestions
-        
-        return tmpQuestions
+        return questions
     }
     
     private func fetchCategories(all: Bool) -> [String] {
-        guard let jsonResult = fetchCategoriesJSON() else {
-            return [String]()
-        }
-        
-        allCategories = Array(jsonResult.keys)
-        selectedCategories = jsonResult.allKeys(forValue: true)
-        
-        guard let tmpAllCategories = allCategories else {
-            fatalError("No categories fetched.")
-        }
-        
-        guard let tmpSelectedCategory = selectedCategories else {
-            print("No categories selected.")
+        guard let jsonResult = fetchJSON(forResource: categoriesResource) as? Dictionary<String, Bool> else {
             return [String]()
         }
 
-        if all {
-            return tmpAllCategories
-        } else {
-            return tmpSelectedCategory
-        }
-        
+        let tmpAllCategories = Array(jsonResult.keys)
+        let tmpSelectedCategory = jsonResult.allKeys(forValue: true)
+
+        return all ? tmpAllCategories : tmpSelectedCategory
     }
     
-    private func fetchQuestionsJSON() -> Dictionary<String, [String]>? {
-        if let path = Bundle.main.path(forResource: "Questions", ofType: "json") {
+    private func fetchJSON(forResource resource: String) -> Dictionary<String, Any>? {
+        if let path = Bundle.main.path(forResource: resource, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Dictionary<String, [String]> {
+                if let jsonResult = jsonResult as? Dictionary<String, Any> {
                     return jsonResult
                 }
             } catch {
-                fatalError("JSON file \"Questions.json\" not readable.")
+                fatalError("JSON file \"\(resource).json\" not readable.")
             }
         }
         return nil
     }
     
-    private func fetchCategoriesJSON() -> Dictionary<String, Bool>? {
-        if let path = Bundle.main.path(forResource: "Categories", ofType: "json") {
+    private func saveJSON(content: Dictionary<String, Bool>, filename: String) {
+        if let encodedData = try? JSONEncoder().encode(content) {
+            guard let path = Bundle.main.path(forResource: filename, ofType: "json") else {
+                fatalError("Missing file \"\(filename)\"")
+            }
+            let pathAsURL = URL(fileURLWithPath: path)
             do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                if let jsonResult = jsonResult as? Dictionary<String, Bool> {
-                    return jsonResult
-                }
-            } catch {
-                fatalError("JSON file not readable.")
+                try encodedData.write(to: pathAsURL)
+            }
+            catch {
+                print("Failed to write JSON data: \(error.localizedDescription)")
             }
         }
-        return nil
     }
     
     func getCategories(all: Bool) -> [String] {
@@ -108,7 +97,7 @@ class DataManager {
     }
     
     func switchCategory(categoryName category: String) {
-        guard var allCategoriesDict = fetchCategoriesJSON() else {
+        guard var allCategoriesDict = fetchJSON(forResource: categoriesResource) as? Dictionary<String, Bool> else {
             fatalError("Categories.json loading failed.")
         }
         
@@ -120,40 +109,28 @@ class DataManager {
         
         allCategoriesDict[category] = !isCategoryEnabled
         
-        //TODO: Write Dictionary into JSON.
+        saveJSON(content: allCategoriesDict, filename: "Categories")
+        
+        selectedCategories = fetchCategories(all: false)
     }
     
+    
     func getQuestions(categories: [String]?) -> [String] {
-        if let questions = questions {
-            return questions
-        } else {
-            return fetchQuestions(categories: categories)
-        }
+        return questions ?? fetchQuestions(categories: categories)
     }
     
     func getQuestion(atIndex index: Int) -> String? {
-        if let questions = questions {
-            if index < questions.count - 1 {
-                return questions[index]
-            }
+        if let questions = questions, index < questions.count - 1 {
+            return questions[index]
         }
+        
         return nil
     }
     
     func shuffleQuestions() -> [String] {
-        if var questions = questions {
-            lock = false
-            questions = questions.shuffled()
-            self.questions = questions
-            
-            return questions
-        } else if !lock {
-            lock = true
-            _ = fetchQuestions(categories: selectedCategories)
-            
-            return shuffleQuestions()
-        } else {
-            fatalError("Prevented endless loop.")
-        }
+        selectedCategories = fetchCategories(all: false)
+        questions = questions.shuffled()
+        
+        return questions
     }
 }
