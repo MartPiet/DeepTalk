@@ -128,7 +128,7 @@
         <!--Filter-->
         <scene sceneID="muF-yL-0cc">
             <objects>
-                <navigationController id="9ol-4r-scj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="filterNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9ol-4r-scj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filter" image="ic_filterIcon" selectedImage="ic_filterIcon_selected" id="c9b-Oh-UPj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tQz-v0-riz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -149,7 +149,7 @@
         <!--Filter-->
         <scene sceneID="vb2-2W-iVC">
             <objects>
-                <tableViewController id="O6W-7H-sjc" customClass="SettingsTableViewController" customModule="DeepTalk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="filterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O6W-7H-sjc" customClass="SettingsTableViewController" customModule="DeepTalk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wbL-c8-at9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,8 +239,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4M-VN-bOD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4M-VN-bOD">
                                 <rect key="frame" x="16" y="73" width="343" height="357"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="218" id="Ypp-lh-njH"/>
+                                </constraints>
                                 <string key="text">Die Idee dieser App ist während eines Gesprächs vor einem Kamin in einem mittelalterlichen Bürgerhaus in Antwerpen mit meinen besten Freunden entstanden. Das Ziel ist durch tiefgründige und persönliche Fragen Freundschaften zu stärken und auf eine weitere tiefere Ebene zu führen.  Hilf uns Gespräche unter Freunden bedeutender zu machen: Gib uns Feedback, teile diese App oder schlage uns Fragen vor, die wir noch einbauen können!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -299,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmj-Gz-2Nt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-775" y="2169"/>
+            <point key="canvasLocation" x="-775.20000000000005" y="2168.3658170914546"/>
         </scene>
     </scenes>
     <resources>

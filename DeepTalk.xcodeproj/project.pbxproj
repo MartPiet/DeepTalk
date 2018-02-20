@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A036721201910320054D2DE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A036720201910320054D2DE /* DataManager.swift */; };
-		7A036723201910440054D2DE /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A036722201910440054D2DE /* Questions.json */; };
-		7A03672620191AD30054D2DE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A03672520191AD30054D2DE /* Collection.swift */; };
-		7A036728201926090054D2DE /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A036727201926090054D2DE /* Categories.json */; };
 		7A1D0CE720129B90005F0B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CE620129B90005F0B28 /* AppDelegate.swift */; };
 		7A1D0CEC20129B90005F0B28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CEA20129B90005F0B28 /* Main.storyboard */; };
 		7A1D0CEE20129B90005F0B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CED20129B90005F0B28 /* Assets.xcassets */; };
 		7A1D0CF120129B90005F0B28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D0CEF20129B90005F0B28 /* LaunchScreen.storyboard */; };
-		7A1D0CFA2012A3C4005F0B28 /* DeepTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */; };
-		7A1D0CFC2012A3DF005F0B28 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */; };
-		7A1D0CFE2012A3FA005F0B28 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */; };
-		7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */; };
-		7A470E41201A099C006884CC /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A470E40201A099C006884CC /* ShareViewController.swift */; };
+		7A2D77C7203C6EC60073A7F8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77C3203C6EC60073A7F8 /* SettingsTableViewController.swift */; };
+		7A2D77C8203C6EC60073A7F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77C4203C6EC60073A7F8 /* AboutViewController.swift */; };
+		7A2D77C9203C6EC60073A7F8 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77C5203C6EC60073A7F8 /* SettingsTableViewCell.swift */; };
+		7A2D77CA203C6EC60073A7F8 /* DeepTalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77C6203C6EC60073A7F8 /* DeepTalkViewController.swift */; };
+		7A2D77CD203C6ED10073A7F8 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77CC203C6ED10073A7F8 /* Collection.swift */; };
+		7A2D77D1203C6F000073A7F8 /* Categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D77CF203C6F000073A7F8 /* Categories.json */; };
+		7A2D77D2203C6F000073A7F8 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A2D77D0203C6F000073A7F8 /* Questions.json */; };
+		7A2D77D4203C6F840073A7F8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D77D3203C6F840073A7F8 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,21 +35,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7A036720201910320054D2DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = DeepTalk/DataManager.swift; sourceTree = SOURCE_ROOT; };
-		7A036722201910440054D2DE /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Questions.json; path = Data/Questions.json; sourceTree = SOURCE_ROOT; };
-		7A03672520191AD30054D2DE /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		7A036727201926090054D2DE /* Categories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Categories.json; path = Data/Categories.json; sourceTree = SOURCE_ROOT; };
 		7A1D0CE320129B90005F0B28 /* DeepTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1D0CE620129B90005F0B28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1D0CEB20129B90005F0B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A1D0CED20129B90005F0B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A1D0CF020129B90005F0B28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A1D0CF220129B90005F0B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepTalkViewController.swift; sourceTree = "<group>"; };
-		7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		7A470E40201A099C006884CC /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		7A2D77C3203C6EC60073A7F8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		7A2D77C4203C6EC60073A7F8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7A2D77C5203C6EC60073A7F8 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		7A2D77C6203C6EC60073A7F8 /* DeepTalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepTalkViewController.swift; sourceTree = "<group>"; };
+		7A2D77CC203C6ED10073A7F8 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		7A2D77CF203C6F000073A7F8 /* Categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Categories.json; sourceTree = "<group>"; };
+		7A2D77D0203C6F000073A7F8 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
+		7A2D77D3203C6F840073A7F8 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,32 +62,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A03671F20190ED60054D2DE /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				7A036722201910440054D2DE /* Questions.json */,
-				7A036727201926090054D2DE /* Categories.json */,
-				7A036720201910320054D2DE /* DataManager.swift */,
-			);
-			name = Data;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		7A03672420191AB70054D2DE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7A03672520191AD30054D2DE /* Collection.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		7A1D0CDA20129B8F005F0B28 = {
 			isa = PBXGroup;
 			children = (
-				7A470E3F201A099C006884CC /* Utility */,
-				7A03672420191AB70054D2DE /* Extensions */,
-				7A03671F20190ED60054D2DE /* Data */,
-				7A1D0CF82012A307005F0B28 /* ViewController */,
+				7A2D77CE203C6F000073A7F8 /* Data */,
+				7A2D77CB203C6ED10073A7F8 /* Extensions */,
+				7A2D77C2203C6EC60073A7F8 /* ViewController */,
 				7A1D0CE520129B90005F0B28 /* DeepTalk */,
 				7A1D0CE420129B90005F0B28 /* Products */,
 			);
@@ -115,23 +93,36 @@
 			path = DeepTalk;
 			sourceTree = "<group>";
 		};
-		7A1D0CF82012A307005F0B28 /* ViewController */ = {
+		7A2D77C2203C6EC60073A7F8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7A1D0CF92012A3C4005F0B28 /* DeepTalkViewController.swift */,
-				7A1D0CFB2012A3DF005F0B28 /* SettingsTableViewController.swift */,
-				7A1D0CFF2012A41F005F0B28 /* SettingsTableViewCell.swift */,
-				7A1D0CFD2012A3FA005F0B28 /* AboutViewController.swift */,
+				7A2D77C3203C6EC60073A7F8 /* SettingsTableViewController.swift */,
+				7A2D77C4203C6EC60073A7F8 /* AboutViewController.swift */,
+				7A2D77C5203C6EC60073A7F8 /* SettingsTableViewCell.swift */,
+				7A2D77C6203C6EC60073A7F8 /* DeepTalkViewController.swift */,
 			);
-			path = ViewController;
+			name = ViewController;
+			path = DeepTalk/ViewController;
 			sourceTree = "<group>";
 		};
-		7A470E3F201A099C006884CC /* Utility */ = {
+		7A2D77CB203C6ED10073A7F8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7A470E40201A099C006884CC /* ShareViewController.swift */,
+				7A2D77CC203C6ED10073A7F8 /* Collection.swift */,
 			);
-			path = Utility;
+			name = Extensions;
+			path = DeepTalk/Extensions;
+			sourceTree = "<group>";
+		};
+		7A2D77CE203C6F000073A7F8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7A2D77D3203C6F840073A7F8 /* DataManager.swift */,
+				7A2D77CF203C6F000073A7F8 /* Categories.json */,
+				7A2D77D0203C6F000073A7F8 /* Questions.json */,
+			);
+			name = Data;
+			path = DeepTalk/Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +185,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A036723201910440054D2DE /* Questions.json in Resources */,
 				7A1D0CF120129B90005F0B28 /* LaunchScreen.storyboard in Resources */,
 				7A1D0CEE20129B90005F0B28 /* Assets.xcassets in Resources */,
+				7A2D77D1203C6F000073A7F8 /* Categories.json in Resources */,
 				7A1D0CEC20129B90005F0B28 /* Main.storyboard in Resources */,
-				7A036728201926090054D2DE /* Categories.json in Resources */,
+				7A2D77D2203C6F000073A7F8 /* Questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,14 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A1D0CFC2012A3DF005F0B28 /* SettingsTableViewController.swift in Sources */,
-				7A1D0CFA2012A3C4005F0B28 /* DeepTalkViewController.swift in Sources */,
-				7A470E41201A099C006884CC /* ShareViewController.swift in Sources */,
-				7A1D0D002012A41F005F0B28 /* SettingsTableViewCell.swift in Sources */,
-				7A036721201910320054D2DE /* DataManager.swift in Sources */,
-				7A1D0CFE2012A3FA005F0B28 /* AboutViewController.swift in Sources */,
+				7A2D77CD203C6ED10073A7F8 /* Collection.swift in Sources */,
+				7A2D77CA203C6EC60073A7F8 /* DeepTalkViewController.swift in Sources */,
+				7A2D77C9203C6EC60073A7F8 /* SettingsTableViewCell.swift in Sources */,
+				7A2D77D4203C6F840073A7F8 /* DataManager.swift in Sources */,
 				7A1D0CE720129B90005F0B28 /* AppDelegate.swift in Sources */,
-				7A03672620191AD30054D2DE /* Collection.swift in Sources */,
+				7A2D77C8203C6EC60073A7F8 /* AboutViewController.swift in Sources */,
+				7A2D77C7203C6EC60073A7F8 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
